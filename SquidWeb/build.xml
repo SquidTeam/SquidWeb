@@ -34,6 +34,19 @@
 	</target>
 	
 	<target name="main" depends="clean, jar" />
+	
+	<target name="doc" depends="compile">
+		<mkdir dir="${doc.dir}" />
+			<javadoc destdir="${doc.dir}" verbose="true" author="true" version="true"> 
+				<classpath refid="classpath" />
+				<packageset dir="${src.dir}" defaultexcludes="yes">
+					<include name="**"/>
+					<exclude name="**/tests/"/>
+				</packageset>
+			</javadoc>
+	</target>
+	
+	</target>
 </project>
 
 
