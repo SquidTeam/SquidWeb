@@ -35,7 +35,7 @@ public class Main {
 
       System.out.println("Connexion ok !");
       Statement statement = connexion.createStatement();
-      int statut = statement.executeUpdate("INSERT INTO users(firstname) VALUES ('Test')");
+      int statut = statement.executeUpdate("INSERT INTO users(firstname) VALUES ('Benjamin')");
       System.out.println(statut);
     } catch (SQLException e) {
 
