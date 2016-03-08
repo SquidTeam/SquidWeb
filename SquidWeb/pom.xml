@@ -13,18 +13,19 @@
            <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
             <version>3.0.1</version>
-            <executions>
-                <!--
-                    Ensures that FindBugs inspects source code when project is compiled.
-                -->
-                <execution>
-                    <id>analyze-compile</id>
-                    <phase>compile</phase>
-                    <goals>
-                        <goal>check</goal>
-                    </goals>
-                </execution>
-            </executions>
+            <configuration>
+          <effort>Max</effort>
+          <threshold>Low</threshold>
+          <xmlOutput>true</xmlOutput>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase> 
+            <goals>
+              <goal>check</goal> 
+            </goals>
+          </execution>
+        </executions>
         </plugin>
 	</plugins>
   </build>
