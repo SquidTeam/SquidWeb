@@ -33,6 +33,7 @@ public class Main {
 
     if (a == b) {
       System.out.println(a);
+      System.out.println(b);
     }
 
     try {
