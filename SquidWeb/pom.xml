@@ -1,58 +1,59 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>SquidWeb</groupId>
-  <artifactId>SquidWeb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-   <properties>
-     <findbugs.version>2.5.2</findbugs.version>
-     <checkstyle.version>2.9.1</checkstyle.version>
-  </properties>
-   <build>
-     <plugins>
-        <plugin>
-           <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <version>3.0.1</version>
-            <configuration>
-          <effort>Max</effort>
-          <threshold>Low</threshold>
-          <xmlOutput>true</xmlOutput>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>verify</phase> 
-            <goals>
-              <goal>check</goal> 
-            </goals>
-          </execution>
-        </executions>
-        </plugin>
-	</plugins>
-  </build>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>SquidWeb</groupId>
+	<artifactId>SquidWeb</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<findbugs.version>2.5.2</findbugs.version>
+		<checkstyle.version>2.9.1</checkstyle.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<effort>Max</effort>
+					<threshold>Low</threshold>
+					<xmlOutput>true</xmlOutput>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>${checkstyle.version}</version>
-						<configuration>
-							<configLocation>https://github.com/checkstyle/checkstyle/blob/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>
-							<encoding>UTF-8</encoding>
-							<linkXRef>false</linkXRef>
-						</configuration>
+				<configuration>
+					<configLocation>https://github.com/checkstyle/checkstyle/blob/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>
+					<encoding>UTF-8</encoding>
+					<linkXRef>false</linkXRef>
+				</configuration>
 			</plugin>
-			 <plugin>
-		        <groupId>org.codehaus.mojo</groupId>
-		        <artifactId>findbugs-maven-plugin</artifactId>
-		        <version>2.5.2</version>
-		        <configuration>
-		          <xmlOutput>true</xmlOutput>
-		          <!-- Optional directory to put findbugs xdoc xml report -->
-		          <xmlOutputDirectory>target</xmlOutputDirectory>
-        		</configuration>
-        		
-      		</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<!-- Optional directory to put findbugs xdoc xml report -->
+					<xmlOutputDirectory>target</xmlOutputDirectory>
+				</configuration>
+
+			</plugin>
 		</plugins>
 	</reporting>
 </project>
