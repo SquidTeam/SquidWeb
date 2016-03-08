@@ -29,8 +29,23 @@
 				<version>3.45</version>
 				<configuration>
 					<configLocation>google_checks.xml</configLocation>
+					<failOnViolation>false</failOnViolation>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	
+	 <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${checkstyle.plugin.version}</version>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <failOnViolation>false</failOnViolation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
