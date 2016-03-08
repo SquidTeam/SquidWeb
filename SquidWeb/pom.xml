@@ -20,27 +20,31 @@
                 <xmlOutputDirectory>target/findbugs</xmlOutputDirectory>
                 <failOnError>false</failOnError>
         	</configuration>
-        </plugin>
-      <!--  CHECKSTYLE  -->
-        <plugin>
-   <groupId>org.apache.maven.plugins</groupId>
-   <artifactId>maven-checkstyle-plugin</artifactId>
-   <version>${checkstyle.version}</version>
-   <executions>
-     <execution>
-       <id>validate</id>
-       <phase>validate</phase>
-       <configuration>
-         <configLocation>https://github.com/checkstyle/checkstyle/blob/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>
-         <encoding>UTF-8</encoding>
-         <linkXRef>false</linkXRef>
-       </configuration>
-       <goals>
-         <goal>check</goal>
-       </goals>
-     </execution>
-   </executions>
- </plugin>
-</plugins>
+        </plugin>  
+	</plugins>
   </build>
+  
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<configuration>
+							<configLocation>https://github.com/checkstyle/checkstyle/blob/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>
+							<encoding>UTF-8</encoding>
+							<linkXRef>false</linkXRef>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
