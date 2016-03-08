@@ -27,7 +27,6 @@ public class Main {
     String motDePasse = "squidpw";
 
     Connection connexion = null;
-aa
     String a = "a";
     String b = "b";
 
