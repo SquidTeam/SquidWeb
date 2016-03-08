@@ -1,6 +1,6 @@
 package Squidteam.main;
 
-import java.sql.*
+import java.sql.*;
 
 
 public class Main {
