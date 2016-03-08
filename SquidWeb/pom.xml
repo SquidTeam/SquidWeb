@@ -11,16 +11,9 @@
      <plugins>
         <plugin>
            <groupId>org.codehaus.mojo</groupId>
-           <artifactId>findbugs-maven-plugin</artifactId>
-           <version>${findbugs.version}</version>
-           <configuration>
-				<outputDirectory>${project.build.directory}/findbugs</outputDirectory>
-                <xmlOutput>true</xmlOutput>
-                <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-                <xmlOutputDirectory>target/findbugs</xmlOutputDirectory>
-                <failOnError>false</failOnError>
-        	</configuration>
-        </plugin>  
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <version>3.0.1</version>
+        </plugin>
 	</plugins>
   </build>
   
@@ -36,6 +29,16 @@
 							<linkXRef>false</linkXRef>
 						</configuration>
 			</plugin>
+			 <plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>findbugs-maven-plugin</artifactId>
+		        <version>2.5.2</version>
+		        <configuration>
+		          <xmlOutput>true</xmlOutput>
+		          <!-- Optional directory to put findbugs xdoc xml report -->
+		          <xmlOutputDirectory>target</xmlOutputDirectory>
+        		</configuration>
+      		</plugin>
 		</plugins>
 	</reporting>
 </project>
