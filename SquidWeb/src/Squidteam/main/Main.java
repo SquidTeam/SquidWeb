@@ -31,7 +31,6 @@ public class Main {
     try {
 
       connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
-      aaaa
 
       System.out.println("Connexion ok !");
       Statement statement = connexion.createStatement();
