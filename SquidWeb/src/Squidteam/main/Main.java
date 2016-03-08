@@ -7,63 +7,66 @@ import java.sql.Statement;
 
 public class Main {
 
-  public static void main(String[] args) {
-    /* Chargement du driver JDBC pour MySQL */
+	public static void main(String[] args) {
+		/* Chargement du driver JDBC pour MySQL */
 
-    try {
+		try {
 
-      Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 
-    } catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException e) {
 
-      System.out.println("Driver manquant !");
+			System.out.println("Driver manquant !");
 
-    }
+		}
 
-    String url = "jdbc:mysql://vps254243.ovh.net:3306/SquidDB";
+		String url = "jdbc:mysql://vps254243.ovh.net:3306/SquidDB";
 
-    String utilisateur = "Squid";
+		String utilisateur = "Squid";
 
-    String motDePasse = "squidpw";
+		String motDePasse = "squidpw";
 
-    Connection connexion = null;
+		Connection connexion = null;
 
-    String a = "a";
-    String b = "b";
+		String a = "a";
+		String b = "b";
 
-    if (a == b) {
-      System.out.println(a);
-      System.out.println(b);
-    }
+		if (a == b) {
+			System.out.println(a);
+			System.out.println(b);
+		}
 
-    try {
+		try {
 
-      connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
+			connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
 
-      System.out.println("Connexion ok !");
-      Statement statement = connexion.createStatement();
-      int statut = statement.executeUpdate("INSERT INTO users(firstname) VALUES ('Benjamin')");
-      System.out.println(statut);
-    } catch (SQLException e) {
+			System.out.println("Connexion ok !");
+			Statement statement = connexion.createStatement();
+			int statut = statement.executeUpdate("INSERT INTO users(firstname) VALUES ('Benjamin')");
+			System.out.println(statut);
+		} catch (SQLException e) {
 
-      System.out.println("Serveur injoignable");
+			System.out.println("Serveur injoignable");
 
-    } finally {
+		} finally {
 
-      if (connexion != null)
+			if (connexion != null)
 
-        try {
+				try {
 
-          /* Fermeture de la connexion */
+					/* Fermeture de la connexion */
 
-          connexion.close();
+					connexion.close();
 
-        } catch (SQLException ignore) {
+				} catch (SQLException ignore) {
 
-          /* Si une erreur survient lors de la fermeture, il suffit de l'ignorer. */
+					/*
+					 * Si une erreur survient lors de la fermeture, il suffit de
+					 * l'ignorer.
+					 */
 
-        }
+				}
 
-    }
-  }
+		}
+	}
 }
