@@ -57,7 +57,30 @@ public class Main {
           /* Fermeture de la connexion */
 
           connexion.close();
+          System.out.println("Test");
+          System.out.println("Test");
 
+          System.out.println("Test");
+
+          System.out.println("Test");
+
+          System.out.println("Test");
+
+          System.out.println("Test");
+
+          System.out.println("Test");
+          if (1 == 2) {
+            System.out.println("Test");
+
+            System.out.println("Test");
+
+            System.out.println("Test");
+
+            System.out.println("Test");
+            System.out.println("Test");
+
+
+          }
         } catch (SQLException ignore) {
 
           /*
