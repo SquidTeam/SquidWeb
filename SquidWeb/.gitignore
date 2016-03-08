@@ -1,6 +1,4 @@
 /bin/
 /target/
-/web/
 /init.sql
-/maquette/
-/analyse/
+
