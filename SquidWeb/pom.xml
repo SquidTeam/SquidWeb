@@ -3,6 +3,10 @@
   <groupId>SquidWeb</groupId>
   <artifactId>SquidWeb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+   <properties>
+     <findbugs.version>2.5.2</findbugs.version>
+     <checkstyle.version>2.9.1</checkstyle.version>
+  </properties>
    <build>
      <plugins>
         <plugin>
