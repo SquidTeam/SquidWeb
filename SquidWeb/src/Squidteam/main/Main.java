@@ -18,6 +18,8 @@ public class Main {
 
     }
 
+    if (1 == 2) System.out.println("nul");
+
     String url = "jdbc:mysql://vps254243.ovh.net:3306/SquidDB";
 
     String utilisateur = "Squid";
