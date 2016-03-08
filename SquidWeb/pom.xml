@@ -14,9 +14,11 @@
            <artifactId>findbugs-maven-plugin</artifactId>
            <version>${findbugs.version}</version>
            <configuration>
-				<findbugsXmlOutput>true</findbugsXmlOutput>
+				<outputDirectory>${project.build.directory}/findbugs</outputDirectory>
+                <xmlOutput>true</xmlOutput>
                 <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-				<xmlOutput>true</xmlOutput>
+                <xmlOutputDirectory>target/findbugs</xmlOutputDirectory>
+                <failOnError>false</failOnError>
         	</configuration>
         </plugin>
      </plugins>
