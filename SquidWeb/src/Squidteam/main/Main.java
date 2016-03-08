@@ -1,6 +1,9 @@
 package Squidteam.main;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class Main {
@@ -17,8 +20,6 @@ public class Main {
       System.out.println("Driver manquant !");
 
     }
-
-    if (1 == 2) System.out.println("nul");
 
     String url = "jdbc:mysql://vps254243.ovh.net:3306/SquidDB";
 
