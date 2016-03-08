@@ -28,6 +28,13 @@ public class Main {
 
     Connection connexion = null;
 
+    String a = "a";
+    String b = "b";
+
+    if (a == b) {
+      System.out.println(a);
+    }
+
     try {
 
       connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
