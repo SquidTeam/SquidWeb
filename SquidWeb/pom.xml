@@ -38,6 +38,18 @@
 		          <!-- Optional directory to put findbugs xdoc xml report -->
 		          <xmlOutputDirectory>target</xmlOutputDirectory>
         		</configuration>
+        		<executions>
+                <!--
+                    Ensures that FindBugs inspects source code when project is compiled.
+                -->
+                <execution>
+                    <id>analyze-compile</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
       		</plugin>
 		</plugins>
 	</reporting>
