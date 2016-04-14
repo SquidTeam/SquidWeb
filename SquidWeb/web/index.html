@@ -7,21 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Damien Kech">
+    <meta name="author" content="Dos Santos Bastien">
 
-    <title>Mobilitas</title>
+    <title>SquidTeam</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    <link href="style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,118 +26,35 @@
 
 <body>
 
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="mobilitas/home"><img src="../images/logo_haute_ecoleFs.png" alt="logo"/></a>
-            </div>
+    <div class="container-fluid">
+        
+        <div class="row">
             
-            <div class="navbar-tools">
-                <!-- start: TOP NAVIGATION MENU -->
-                <ul class="nav navbar-right">
-                    <!-- start: USER DROPDOWN -->
-					<li class="dropdown current-user">
-                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                            <span id="username"></span> <i class="fa fa-angle-down"></i>
-                            <span id="email" style="display:none"></span> 
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>                            
-                                <a href="mobilitas/logout"> <i class="fa fa-power-off logout"></i> &nbsp;Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end: USER DROPDOWN -->
-                </ul>
-                <!-- end: TOP NAVIGATION MENU -->
-            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <h1>S'INSCRIRE</h1>
+            </div>                
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-globe fa-fw"></i>Mobilitas<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="mobilitas/mobilite">Mobilités</a>
-                                </li>
-                                <li>
-                                    <a href="mobilitas/eleve">Élèves</a>
-                                </li>
-                                <li>
-                                    <a href="mobilitas/partenaires">Partenaires</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-        <!-- Page Content -->
-      <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="page-heading"><h1>Mobilitas:</h1></div>
-                <div class="row" id="rowConnexionInscription" display="none">
-                     <div class="col-lg-6">
-                        <div class="panel panel-default"> 
-                            <div class="panel-heading">Inscription</div>
-                            <div class="panel-body">
-                            <form id="InscriptionForm">
-                                <p>Login : <input type="text" id="loginInputI"/></p>
-                                <p>Nom : <input type="text" id="nomI"/><span id="messageI"/></p>
-                                <p>Prenom : <input type="text" id="prenomI"/></p>
-                                <p>Email : <input type="email" id="emailI"/></p>
-                                <p>Password : <input type="password" id="passwordInputI"/></p> 
-                            </form>
-                            <button id="InscriptionSubmit">Inscription</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default"> 
-                            <div class="panel-heading">Connexion</div>
-                            <div class="panel-body">
-                            <form id="ConnexionForm">
-                                <p>Login: <input type="text" id="loginInputC" placeholder="adresse ou login" /><span id="messageCo"/></p>
-                                <p>Password: <input type="password" id="passwordInputC"/></p>         
-                            </form>
-                            <button id="connexionSubmit">Connexion </button>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <div class="row" id="rowAccueil" display="none">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Accueil:</div>
-                                <div class="panel-body">
-                                    <p>Bienvenue sur l'application Mobilitas:</p>    
-                                    <img src="../images/logo.jpg" alt="mobilitas_logo"/>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
         </div>
-        <!-- /#page-wrapper -->
+
+        <form class="col-xs-8 col-xs-offset-2 form-horizontal">
+            <div class="form-group">
+                <div class="row">
+                    <label class="hidden-xs control-label text-left col-xs-2">Nom : </label> 
+                    <div class="col-sm-8 col-xs-offset-2">
+                        <input "form-control" type="text" placeholder="NOM">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="hidden-xs control-label col-xs-2">Prénom : </label> 
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <input "form-control" type="text" placeholder="PRENOM">
+                    </div>
+                </div>
+            </div>
+        </form>
+        
     </div>
-    <!-- /#wrapper -->
+    
 
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
