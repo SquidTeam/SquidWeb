@@ -1,4 +1,4 @@
-package Squidteam.ihm;
+package squidteam.ihm;
 
 import com.owlike.genson.Genson;
 import com.owlike.genson.GensonBuilder;

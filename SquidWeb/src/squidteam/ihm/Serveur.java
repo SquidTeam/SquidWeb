@@ -1,4 +1,4 @@
-package Squidteam.ihm;
+package squidteam.ihm;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
