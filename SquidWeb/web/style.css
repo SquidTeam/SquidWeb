@@ -1,3 +1,6 @@
+html{
+	width:100%;
+}
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.05644688556457em;
@@ -6,23 +9,22 @@ body{
 
 .container-fluid{
 	background-color: #f1f1f1;
+	padding: 0 15px;
 }
 
 #inscription{
-	height: 85vh !important;
+	height: 65vh !important;
 }
 
-.vertical_center {
-    display: flex;
-    align-items: center;
-}
 
 header{
+	margin-bottom: 10vh !important;
 	background-color: #2b2b3d;
 	height: 10vh;
 }
 
 footer{
+	margin-top: 10vh !important;
 	background-color: #bdbdc0;
 	text-align: center;
 	height: 5vh;
@@ -36,9 +38,11 @@ footer p{
 }
 
 #logo_squidteam{
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width: 3.00%;
+	position: absolute;
+  	top: 50%;
+  	left:50%;
+  	transform: translate(-50%,-50%);
+	width: 8vh;
 }
 
 h1{
