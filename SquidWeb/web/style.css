@@ -1,14 +1,58 @@
+html{
+	width:100%;
+}
 body{
-	background-color: #f1f1f1;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 1.05644688556457em;
+	letter-spacing: 0.2em;
+}
+
+.container-fluid{
+	background-color: #f1f1f1;
+	padding: 0 15px;
+}
+
+#inscription{
+	height: 65vh !important;
+}
+
+
+header{
+	margin-bottom: 10vh !important;
+	background-color: #2b2b3d;
+	height: 10vh;
+}
+
+footer{
+	margin-top: 10vh !important;
+	background-color: #bdbdc0;
+	text-align: center;
+	height: 5vh;
+}
+
+footer p{
+	margin:0px;
+	padding: 0px;
+	line-height: 5vh;
+	text-align: center;
+}
+
+#logo_squidteam{
+	position: absolute;
+  	top: 50%;
+  	left:50%;
+  	transform: translate(-50%,-50%);
+	width: 8vh;
 }
 
 h1{
 	text-align: center;
+	font-size: 2.3420833567544em !important;
+	letter-spacing: 0.3em !important;
 }
 
 .form-horizontal .control-label{
-	text-align:left !important; 
+	text-align:left !important;
 }
 
 #formInscription input{
@@ -17,6 +61,11 @@ h1{
 	height: 45px;
 }
 
+.form-control:focus{
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 #formInscription label{
 	height: 45px;
 	line-height: 45px;
@@ -38,8 +87,9 @@ h1{
 	background-color: #2b2b3d !important;
 	color: white;
 	border-radius: 52px !important;
-	font-size: 1.48722293153904em;
+	font-size: 1.48722293153904em !important;
 	height: 50px !important;
+	letter-spacing: 0.3em !important;
 }
 @media(min-width:1200px){
 	::-webkit-input-placeholder { /* WebKit browsers */
