@@ -1,5 +1,19 @@
 $(function(){
    $(document).ready(function(){
+	   
+	   $.ajax({
+	        url:'squidteam/connexion/verification',
+	        type:'POST',
+	        data:'',
+	        success:function(response){
+	        	$("#reussie").css("display","block");
+	        	$("#inscription").css("display", "none");
+	        },
+	        error:function(error){
+	        
+	        }
+	    });
+	   
 	   $("#submitInscription").click(function(){
 		   var nom = $("#inputNom").val();
 		   var prenom = $("#inputPrenom").val(); 

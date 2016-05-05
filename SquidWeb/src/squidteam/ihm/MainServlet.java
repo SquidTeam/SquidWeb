@@ -4,10 +4,15 @@ import squidteam.biz.dto.UtilisateurDto;
 import squidteam.biz.ucc.UtilisateurUcc;
 
 import com.auth0.jwt.JWTSigner;
+import com.auth0.jwt.JWTVerifier;
+import com.auth0.jwt.JWTVerifyException;
 import com.owlike.genson.Genson;
 import com.owlike.genson.GensonBuilder;
 
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -95,11 +100,73 @@ public class MainServlet extends HttpServlet {
               resp.setCharacterEncoding("UTF-8");
               resp.setStatus(200);
               resp.getOutputStream().write(json.getBytes("UTF-8"));
+              break;
             }
 
           }
+            break;
         }
 
+      }
+      case "connexion": {
+        switch (paths[2]) {
+          case "verification": {
+            Cookie[] cookies = req.getCookies();
+            if (req.getSession().getAttribute("user") != null) {
+              String json = (String) req.getSession().getAttribute("user");
+              resp.setContentType("text/json");
+              resp.setContentLength(json.getBytes("UTF-8").length);
+              resp.setCharacterEncoding("UTF-8");
+              resp.setStatus(200);
+              resp.getOutputStream().write(json.getBytes("UTF-8"));
+            }
+            if (cookies != null) {
+              for (Cookie c : cookies) {
+                System.out.println(c.getName());
+                if (c.getName().equals("token")) {
+                  try {
+                    final Map<String, Object> decodedPayload =
+                        new JWTVerifier(SECRET).verify(c.getValue());
+                    HashMap<String, Object> person = new HashMap<String, Object>() {
+                      {
+                        put("login", decodedPayload.get("username"));
+                        put("email", decodedPayload.get("email"));
+                        put("name", decodedPayload.get("nom"));
+                        put("prenom", decodedPayload.get("prenom"));
+                        put("estProf", decodedPayload.get("estProf"));
+                      }
+                    };
+                    String json = genson.serialize(person);
+                    if (req.getSession().getAttribute("user") == null) {
+                      req.getSession().setAttribute("user", json);
+                    }
+                    resp.setContentType("text/json");
+                    resp.setContentLength(json.getBytes("UTF-8").length);
+                    resp.setCharacterEncoding("UTF-8");
+                    resp.setStatus(200);
+                    resp.getOutputStream().write(json.getBytes("UTF-8"));
+                  } catch (SignatureException signatureException) {
+                    System.err.println("Invalid signature!");
+                  } catch (IllegalStateException illegalStateException) {
+                    System.err.println("Invalid Token! " + illegalStateException);
+                  } catch (InvalidKeyException ex) {
+                    System.err.println("Invalid Key! " + ex);
+                  } catch (NoSuchAlgorithmException ex) {
+                    System.err.println("Invalid Algorithm! " + ex);
+                  } catch (IOException ex) {
+                    ex.printStackTrace();
+                  } catch (JWTVerifyException ex) {
+                    System.err.println("JWT Verify Exception! " + ex);
+                  }
+
+                }
+              }
+            }
+            resp.setStatus(404);
+            break;
+          }
+        }
+        break;
       }
 
     }
