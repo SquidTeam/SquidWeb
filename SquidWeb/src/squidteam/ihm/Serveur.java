@@ -18,7 +18,7 @@ public class Serveur {
     Server server = new Server(8080);
     WebAppContext context = new WebAppContext();
     context.setContextPath("/");
-    context.addServlet(new ServletHolder(new MainServlet()), "/mobilitas/*");
+    context.addServlet(new ServletHolder(new MainServlet()), "/squidteam/*");
     context.addServlet(new ServletHolder(new DefaultServlet()), "/");
     context.setResourceBase("web");
     context.setWelcomeFiles(new String[] {"web/index.html"});

@@ -1,5 +1,6 @@
 package squidteam.main;
 
+
 import squidteam.ihm.Serveur;
 
 public class Main {

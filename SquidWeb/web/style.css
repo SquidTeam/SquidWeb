@@ -16,6 +16,10 @@ body{
 	height: 65vh !important;
 }
 
+#reussie{
+	display: none;
+}
+
 
 header{
 	margin-bottom: 10vh !important;
